@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'local.test'
+version = '0.1-SNAPSHOT'
+mainClassName = 'local.test.Main'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'local.test:lib-project:0.1-SNAPSHOT'
+}

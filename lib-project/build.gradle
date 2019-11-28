@@ -1,0 +1,29 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+}
+
+group = 'local.test'
+version = '0.1-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    api 'org.apache.kafka:kafka-clients:2.3.0'
+    api 'org.apache.kafka:kafka-clients:2.3.0:test'
+    api 'org.apache.kafka:kafka_2.12:2.3.0'
+    api 'org.apache.kafka:kafka_2.12:2.3.0:test'
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            mavenJava(MavenPublication) {
+                from components.java
+            }
+        }
+    }
+}
